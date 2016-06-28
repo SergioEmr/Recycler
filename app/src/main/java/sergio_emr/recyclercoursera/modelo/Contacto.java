@@ -1,4 +1,4 @@
-package sergio_emr.recyclercoursera;
+package sergio_emr.recyclercoursera.modelo;
 
 /**
  * Created by sergio on 25/06/2016.
@@ -8,11 +8,14 @@ public class Contacto {
     private String nombre;
     private String telefono;
     private int foto;
+    private int likes;
+    private int id;
 
-    public Contacto(String nombre, String telefono, int foto) {
+    public Contacto(String nombre, String telefono, int foto, int likes) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.foto = foto;
+        this.likes = likes;
     }
 
     public String getNombre() {
@@ -25,6 +28,22 @@ public class Contacto {
 
     public String getTelefono() {
         return telefono;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setTelefono(String telefono) {

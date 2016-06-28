@@ -1,4 +1,4 @@
-package sergio_emr.recyclercoursera;
+package sergio_emr.recyclercoursera.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import sergio_emr.recyclercoursera.modelo.Contacto;
+import sergio_emr.recyclercoursera.R;
 
 /**
  * Created by sergio on 26/06/2016.
@@ -32,6 +35,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
         contactoViewHolder.foto.setImageResource(contacto.getFoto());
         contactoViewHolder.contacto.setText(contacto.getNombre());
         contactoViewHolder.numero.setText(contacto.getTelefono());
+        contactoViewHolder.likes.setText(String.valueOf(contacto.getLikes()));
     }
 
     @Override
@@ -44,12 +48,14 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
         private ImageView foto;
         private TextView contacto;
         private TextView numero;
+        private TextView likes;
 
         public ContactoViewHolder(View itemView) {
             super(itemView);
             foto        = (ImageView) itemView.findViewById(R.id.imageView_foto);
             contacto    = (TextView) itemView.findViewById(R.id.textView_Contacto);
             numero      = (TextView) itemView.findViewById(R.id.textView_numero);
+            likes       = (TextView) itemView.findViewById(R.id.textView_likes);
         }
     }
 }
